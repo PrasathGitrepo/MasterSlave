@@ -1,10 +1,10 @@
 pipeline{ 
-	agent any 
-		stages{
+	agent any
+	stages {
 	
-			stage('one'){ 
+			stage('One'){ 
 				steps{
-				   echo Running Declarative pipeline
+				   echo "Running Declarative pipeline"
 					}
 			     }	
 			
@@ -19,7 +19,7 @@ pipeline{
 				when{
 			   		not{ branch "main" }
 				}
-			   steps{ echo hello
+			   steps{ echo 'hello'
 				}
 			}
 			stage('four'){ 
@@ -35,13 +35,14 @@ pipeline{
 							}
 						}
 					steps{
-						echo 'Running Integration Test'	
+						echo "Running Integration Test"	
 					     }
 						}
 			
 	
-						}	
-}}
-
-
-
+		}
+		
+		}
+		}
+		
+		

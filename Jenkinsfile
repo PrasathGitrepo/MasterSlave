@@ -2,23 +2,25 @@ pipeline{
 	agent any {
 		stages{
 	
-		stage('one'){ steps{
+			stage('one'){ steps{
 				   echo Running Declarative pipeline
-				}
+					}
 			     }	
-		stage('two'){ steps{
+			
+			stage('two'){ steps{
 				   input('Do you want to proceed')
 				}
 			}
 		
-		stage('three'){ when{
+		
+			stage('three'){ when{
 			   	not{ branch "main" }
 				}
 			   steps{ echo hello
 				}
 			}
 			stage('four'){ 
-			parellel{
+				parellel{
 				stage('unit test'){ 
 					steps{ echo "Running unit Test"}
 				}}
@@ -36,7 +38,7 @@ pipeline{
 			
 	
 		}
-}}}}
+}}
 
 
 

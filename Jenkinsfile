@@ -26,7 +26,7 @@ pipeline{
 					parallel{
 					stage('unit test'){ 
 						steps{ echo "Running unit Test"}
-				}}
+				}
 				stage('Integration Test'){
 					agent{
 						docker{
@@ -38,7 +38,7 @@ pipeline{
 						echo "Running Integration Test"	
 					     }
 						}
-			
+			}
 	
 		}
 		
